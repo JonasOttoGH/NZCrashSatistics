@@ -5,13 +5,13 @@ Project Limitations: Although there was more than a sufficient amount of data, t
  
 
 Prepare:
-
 - Data used downloaded from https://www.transport.govt.nz/statistics-and-insights/safety-annual-statistics/
 - Data was imported into Microsoft SQL Server
 
-Process:
 
+Process:
 Data that was needed for visualisation was extracted and processed using Microsoft SQL Server (please refer to attached script for more details)
+
 
 Analyse/Share:
 - Synoptic panel by Okviz was used to create a regional map of New Zealand for visualization
@@ -23,7 +23,7 @@ https://app.powerbi.com/view?r=eyJrIjoiODA0ZjcwNmItYjhkOS00NDYwLThmMTItNTY2MWIzO
 
 Improvements/Changes needed (when time permits):
 - The map on Pg1 could have a drill-down function that could show the data within each district of New Zealand rather than just the region. This can be achieved by continuing to use the Synoptic panel by Okviz.
-- Clearer map image could be used on Pg1
+- Clearer map image could be used on Pg1 as it, unfortunately, looks a little pixelated once published
 - Dataset on New Zealand car registration drivers could be downloaded and compared to each region/district which could produce some interesting results
 - The map on Pg2 could show information on each crash rather than just it's coordinates
 
