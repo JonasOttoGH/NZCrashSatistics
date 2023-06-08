@@ -1,8 +1,8 @@
 # NZCrashSatistics
-A dashboard based on the New Zealand crash statistics from 2000-2023 using SQL and PowerBI. Data is recorded by the NZ Police Department and then handed to the Ministry of Transport. Public access to certain limited data collected can be found on the official Ministry of transport website for public viewing. 
+A dashboard based on the New Zealand crash statistics from 2000-2023 using SQL and PowerBI. Data is recorded by the NZ Police Department and then handed to the Ministry of Transport. Public access to data collected can be found on the official Ministry of transport website for public viewing. 
 
-Limitations of project: Although there was more than sufficient data, there was no crash data (except for year) and no data on civilians like other global public crash data. Therefore, I found data quick limited in creating a comprehensive dashboard.  
-
+Project Limitations: Although there was more than a sufficient amount of data, the data set only contained the year of the crash (no month or standardised date). Additionally, no data on civilians was available like other global public crash datasets. Therefore, I found data was quite limited in creating a comprehensive dashboard.
+ 
 
 Prepare:
 
@@ -17,5 +17,14 @@ Analyse/Share:
 - Synoptic panel by Okviz was used to create a regional map of New Zealand for visualization
 - Finally, an interactive dashboard was made using Power BI. 
 
-Link to final product: https://app.powerbi.com/view?r=eyJrIjoiODA0ZjcwNmItYjhkOS00NDYwLThmMTItNTY2MWIzOGRiOGMzIiwidCI6ImJiMDc1YzM5LWIyMjItNGNhMy05MjMzLWZmYjUwYjY5NGFjOCJ9&pageName=ReportSectionf17d1275658368504010
+Link to final product: 
+https://app.powerbi.com/view?r=eyJrIjoiODA0ZjcwNmItYjhkOS00NDYwLThmMTItNTY2MWIzOGRiOGMzIiwidCI6ImJiMDc1YzM5LWIyMjItNGNhMy05MjMzLWZmYjUwYjY5NGFjOCJ9&pageName=ReportSectionf17d1275658368504010
+
+
+Improvements/Changes needed (when time permits):
+- The map on Pg1 could have a drill-down function that could show the data within each district of New Zealand rather than just the region. This can be achieved by continuing to use the Synoptic panel by Okviz.
+- Clearer map image could be used on Pg1
+- Dataset on New Zealand car registration drivers could be downloaded and compared to each region/district which could produce some interesting results
+- The map on Pg2 could show information on each crash rather than just it's coordinates
+
 
