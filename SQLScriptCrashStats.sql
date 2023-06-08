@@ -1,11 +1,11 @@
---- Look and review data sets
+--Look and review downloaded data sets
 SELECT TOP 100* 
 FROM dbo.CarshDataHalf
 
 SELECT TOP 100* 
 FROM dbo.CarshDataLocation
 
---Create table to join data sets
+--Create a table to join data sets
 
 DROP TABLE IF EXISTS [Final Table]
 SELECT *INTO [Final Table] from
@@ -16,13 +16,13 @@ JOIN dbo.CarshDataLocation CDL
 ON CDH.OBJECTID = CDL.object_ID
 ) as [Final Table]
 
---Review data in check data in each coloumn
+--Review data in check data in each column
 SELECT DISTINCT vehicle, COUNT(vehicle) as [amount of cases]
 FROM [Final Table]
 GROUP BY vehicle
 ORDER BY vehicle
 
--- Update table and prexisting columns
+-- Update table and existing columns
 
 Update [Final Table]
 SET speedLimit = (
@@ -32,26 +32,25 @@ SET speedLimit = (
 			WHEN (speedLimit ='51') THEN '50'
 			WHEN (speedLimit ='6') THEN '60'
 			WHEN (speedLimit ='5') THEN '50'
-			WHEN (speedLimit ='15') THEN '20'
 			ELSE speedLimit
-			END),
-	region = SUBSTRING(region,0, LEN(region)-6), -- Use substring to update and drop 'region' word in region column
-	strayAnimal = ISNULL(strayAnimal, '0'),
+			END),				-- Used case statement to update ‘speedLimit’ column to get rid of speed limit errors
+	region = SUBSTRING(region,0, LEN(region)-6), 	-- Used substring to update ‘region’ and drop the word 'region'
+	strayAnimal = ISNULL(strayAnimal, '0'),		-- Updated column due to error when querying ‘strayAnimal’ column
 	holiday = (
 		CASE 
 			WHEN (holiday is not NUll) THEN holiday
 			ELSE 'No Holiday'
-			END),
+			END),				-- Updated column to show 'No Holiday' instead of NULL
 	trafficControl = (
 		CASE
 			WHEN (trafficControl = 'Nil') THEN 'Unknown'
 			ELSE trafficControl
-			END)
+			END)				
 
--- Alter table to add column and then Update columns
+-- Alter table to add new columns before updating them
 
 ALTER TABLE [Final Table]
-DROP COLUMN [Temporary Speed], [Car], [Crash Location], [Buses], [Other Vehicle], [Van Or Utility]
+DROP COLUMN [Temporary Speed], [Car], [Crash Location], [Buses], [Other Vehicle], [Van Or Utility] 
 
 ALTER TABLE [Final Table]
 ADD [Temporary Speed] nvarchar (20),
@@ -64,14 +63,14 @@ ADD [Temporary Speed] nvarchar (20),
 
 UPDATE [Final Table]
 SET [Temporary Speed] = temporarySpeedLimit, -- making new column for speed
-	[Crash Location] = CONCAT(crashLocation1 , ' ' , crashLocation2), -- Joining locations together for one address
-	[Car] = carStationWagon + ISNULL(vehicle, 0) + taxi + suv , -- Joining vechile together to make less groups
+	[Crash Location] = CONCAT(crashLocation1 , ' ' , crashLocation2), -- Joining both locations together for one address
+	[Car] = carStationWagon + ISNULL(vehicle, 0) + taxi + suv , -- Joining vehicle groups together to limit the amount of groups I have for visualization
 	[Buses] = bus + schoolBus,
 	[Other Vehicle] = ISNULL(train, 0) + unknownVehicleType,
 	[Van Or Utility] = truck + vanOrUtility
 
 
-UPDATE [Final Table] -- 
+UPDATE [Final Table] -- After reviewing data again [Temporary Speed] column needed updating as well
 SET [Temporary Speed] =(
 	CASE 
 		WHEN ([Temporary Speed] is NUll) THEN 'No' 
@@ -79,7 +78,7 @@ SET [Temporary Speed] =(
 		END
 		)
 
--- Drop unneccarcery coloumns
+-- Drop unnecessary columns (columns not needed for visualisation)
 
 SELECT top 1000*
 FROM [Final Table]
@@ -97,7 +96,7 @@ DROP COLUMN advisorySpeed,
 			objectThrownOrDropped,
 			otherObject
 
--- Renaming columns (should have done this earlier)
+-- Renaming columns to have a consistent letter case (should have done this earlier)
 EXEC sp_rename '[Final Table].cliffBank','Cliff Bank', 'COLUMN'
 EXEC sp_rename '[Final Table].crashDirectionDescription','Crash Direction', 'COLUMN'
 
@@ -105,7 +104,7 @@ EXEC sp_rename '[Final Table].crashDirectionDescription','Crash Direction', 'COL
 SELECT *
 FROM [Final Table]
 
-CREATE VIEW [Final Table] AS
-SELECT *
-FROM [Final Table]
+--Create view for visualisation
+
+CREATE VIEW [Final Table] 
 
