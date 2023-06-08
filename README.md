@@ -17,4 +17,5 @@ Analyse/Share:
 - Synoptic panel by Okviz was used to create a regional map of New Zealand for visualization
 - Finally, an interactive dashboard was made using Power BI. 
 
-Link to final product:
+Link to final product: https://app.powerbi.com/view?r=eyJrIjoiODA0ZjcwNmItYjhkOS00NDYwLThmMTItNTY2MWIzOGRiOGMzIiwidCI6ImJiMDc1YzM5LWIyMjItNGNhMy05MjMzLWZmYjUwYjY5NGFjOCJ9&pageName=ReportSectionf17d1275658368504010
+
