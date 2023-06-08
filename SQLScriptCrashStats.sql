@@ -96,7 +96,7 @@ DROP COLUMN advisorySpeed,
 			objectThrownOrDropped,
 			otherObject
 
--- Renaming columns to have a consistent letter case (should have done this earlier)
+-- Renaming columns to have a consistent letter case (should have completed this step earlier)
 EXEC sp_rename '[Final Table].cliffBank','Cliff Bank', 'COLUMN'
 EXEC sp_rename '[Final Table].crashDirectionDescription','Crash Direction', 'COLUMN'
 
