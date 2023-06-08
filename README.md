@@ -1,7 +1,7 @@
 # NZCrashSatistics
-A dashboard based on the New Zealand crash statistics from 2000-2023 using SQL and PowerBI. Data has been recorded by the NZ Police and given to the government for public viewing. 
+A dashboard based on the New Zealand crash statistics from 2000-2023 using SQL and PowerBI. Data is recorded by the NZ Police Department and then handed to the Ministry of Transport. Public access to certain limited data collected can be found on the official Ministry of transport website for public viewing. 
 
-Limitations of project: Although there was more than sufficient data, there was no crash data (except for year) and no data on civilians like other global public crash data. Therefore I found data quick limited in creating a comprhensive dashboard. 
+Limitations of project: Although there was more than sufficient data, there was no crash data (except for year) and no data on civilians like other global public crash data. Therefore, I found data quick limited in creating a comprehensive dashboard.  
 
 
 Prepare:
