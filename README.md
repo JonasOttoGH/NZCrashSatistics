@@ -24,6 +24,7 @@ Improvements/Changes needed (when time permits):
 - The map on Pg1 could have a drill-down function that could show the data within each district of New Zealand rather than just the region. This can be achieved by continuing to use the Synoptic panel by Okviz.
 - Clearer map image could be used on Pg1 as it, unfortunately, looks a little pixelated once published
 - Dataset on New Zealand car registration drivers could be downloaded and compared to each region/district which could produce some interesting results
+- Buttons to be added to transportation vehicles. 
 - The map on Pg2 could show information on each crash rather than just it's coordinates
 
 
